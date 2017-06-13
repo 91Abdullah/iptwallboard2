@@ -3,6 +3,7 @@
 
 $qcalls = 0;
 $queue = "1000";
+$error = false;
 
 require_once('./phpagi/phpagi-asmanager.php');
 
@@ -11,7 +12,7 @@ if($asm->connect("192.168.8.208:5038", "dashboard", "abdullah"))
 { 
 	$result = $asm->Command("queue show $queue");
 } else {
-	echo "Error";
+	$error = "Error connecting to dashboard, please contact technical person";
 }
 
 $asm->disconnect();
@@ -77,6 +78,16 @@ if(!empty($result['data'])) {
 </script>
 
 <div class="row">
+
+    <?php if($error) { ?>
+
+    <div class="alert alert-danger">
+
+        <strong>Error!</strong> $error
+
+    </div>
+
+    <?php } ?>
                 
     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
         <div class="info-box-4">
