@@ -83,7 +83,7 @@ if(!empty($result['data'])) {
 
     <div class="alert alert-danger">
 
-        <strong>Error!</strong> $error
+        <strong>Error!</strong> <?php $error ?>
 
     </div>
 
