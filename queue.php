@@ -79,15 +79,19 @@ if(!empty($result['data'])) {
 
 <div class="row">
 
-    <?php if($error) { ?>
+    <div class="col-xs-12">
 
-    <div class="alert alert-danger">
+        <?php if($error) { ?>
 
-        <strong>Error!</strong> <?php $error ?>
+            <div class="alert alert-danger">
+
+                <strong>Error!</strong> <?php echo $error ?>
+
+            </div>
+
+        <?php } ?>
 
     </div>
-
-    <?php } ?>
                 
     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
         <div class="info-box-4">
