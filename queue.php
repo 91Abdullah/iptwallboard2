@@ -57,11 +57,11 @@ if(!empty($result['data'])) {
             $data['agents_online_busy']++;
         }
 
-        if(preg_match('/Not in use/', $line) && !preg_match('/Unavailable/', $line)) {
+        if(preg_match('/Not in use/', $line) && !preg_match('/paused/i', $line)) {
             $data['agents_online_idle']++;
         }
 
-        if(preg_match('/paused/', $line)) {
+        if(preg_match('/paused/', $line) && !preg_match('/Unavailable/', $line)) {
             $data['agents_online_paused']++;
         }
     }
